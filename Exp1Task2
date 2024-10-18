@@ -1,6 +1,6 @@
 
 /*
-Exp No.:2
+Exp1 Task2
 Title :WAP to get students PCM marks from the user and find average.Use conditional operator to print if the student is eligible for admission. Eligibility crieria is 50%in PCM
 Name:Saksham Jha
 Class:First Year
@@ -13,15 +13,15 @@ Roll No.:061
 
 int main()
 {
-    float Physics,Chemistry,Maths;
+    int Physics,Chemistry,Maths;
     float average;
 
     printf("Enter your Physics marks :");
-    scanf("%f",&Physics);
+    scanf("%d",&Physics);
     printf("Enter your Chemistry marks :");
-    scanf("%f",&Chemistry);
+    scanf("%d",&Chemistry);
     printf("Enter your Maths marks :");
-    scanf("%f",&Maths);
+    scanf("%d",&Maths);
 
     average = (Physics + Chemistry + Maths)/(float)3.0;
     printf("Average : %.2f\n\n",average);
