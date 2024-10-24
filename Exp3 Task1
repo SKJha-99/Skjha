@@ -1,0 +1,96 @@
+/*
+Exp 3 Task 1
+Title: WAP to design a menu driven calculator using switch and goto.
+Name:Saksham Jha
+Class:First Year
+Div:C
+UIN:241P067
+Roll No.:061
+*/
+
+#include <stdio.h>
+
+int main() {
+    int choice;
+    float n1, n2, ans;
+
+    // Label to return to menu
+    start:
+
+    // Display the menu
+    printf("Menu Driven Calculator :\n");
+    printf("1.\t:\tAddition\n");
+    printf("2.\t:\tSubtraction\n");
+    printf("3.\t:\tMultiplication\n");
+    printf("4.\t:\tDivision\n");
+    printf("5.\t:\tModulus\n\n");
+
+    printf("Enter your choice :");
+    scanf("%d",&choice);
+
+    // Input numbers for the first four cases
+    if (choice >= 1 && choice <= 4) {
+        printf("Enter two numbers :\n");
+        scanf("%f %f", &n1, &n2);
+    }
+    // Input as integers for modulus
+    else if (choice == 5) {
+        int int_n1, int_n2;
+        printf("Enter two integers :\n");
+        scanf("%d %d", &int_n1, &int_n2);
+
+        // Perform modulus operation
+        if (int_n2 != 0) {
+            int mod_ans = int_n1 % int_n2;
+            printf("Ans : %d %% %d = %d\n", int_n1, int_n2, mod_ans);
+        } else {
+            printf("ERROR : Modulus by zero is not allowed!\n");
+        }
+        goto start; // return to menu
+    }
+
+    // Perform operations based on user choice
+    switch (choice) {
+        case 1:
+            ans = n1 + n2;
+            printf("Ans : %.2f + %.2f = %.2f\n", n1, n2, ans);
+            break;
+        case 2:
+            ans = n1 - n2;
+            printf("Ans : %.2f - %.2f = %.2f\n", n1, n2, ans);
+            break;
+        case 3:
+            ans = n1 * n2;
+            printf("Ans : %.2f * %.2f = %.2f\n", n1, n2, ans);
+            break;
+        case 4:
+            if (n2 != 0) {
+                ans = n1 / n2;
+                printf("Ans : %.2f / %.2f = %.2f\n", n1, n2, ans);
+            } else {
+                printf("ERROR : Division by zero is not allowed!\n");
+            }
+            break;
+        default:
+            printf("Invalid choice, please try again.\n");
+            goto start; // return to menu for invalid input
+    }
+
+    return 0;
+}
+
+OUTPUT :
+Menu Driven Calculator :
+1.      :       Addition
+2.      :       Subtraction
+3.      :       Multiplication
+4.      :       Division
+5.      :       Modulus
+
+Enter your choice :2
+Enter two numbers :
+1 99
+Ans : 1.00 - 99.00 = -98.00
+
+Process returned 0 (0x0)   execution time : 16.833 s
+Press any key to continue.
