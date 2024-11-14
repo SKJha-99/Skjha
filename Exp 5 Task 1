@@ -1,0 +1,41 @@
+/*
+Exp 5 Task 1
+Title: WAP to find the factorial of a number using iterative function.
+Name:Saksham Jha
+Class:First Year
+Div:C
+UIN:241P067
+Roll No.:061
+*/
+
+
+#include <stdio.h>
+
+       int calcIterativeFact (int x) {
+      int product=1; for (int i=x; i>1; i--) {
+product=product*i;
+}
+
+return product;
+}
+
+int calcProduct (int x) {
+if (x==1) {
+return 1;
+}
+
+return x*calcProduct(x-1);
+}
+
+int main() {
+
+int num=6, product=1; product=calcProduct(num); 
+printf("%d",product);
+
+return 0;
+}
+
+OUTPUT :
+720
+Process returned 0 (0x0)   execution time : 16.833 s
+Press any key to continue.
