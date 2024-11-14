@@ -1,0 +1,29 @@
+/*Expt:5 Task 2
+Title:WAP to find the factorial of a number using recursive function.
+Name: Saksham Jha
+Class : First Year 
+Div: C
+UIN :241P067
+Roll no. : 61
+*/
+#include <stdio.h>
+int calcRecursiveFact (int x) {
+if (x==0||x==1) {
+return 1;
+}
+return x*calcRecursiveFact(x-1);
+}
+int calcProduct (int x) {
+if (x==1) {
+return 1;
+}
+return x*calcProduct(x-1);
+}
+int main() {
+int num=5, product=1; product=calcProduct(num); printf("%d",product);
+return 0;
+}
+OUTPUT :
+120
+Process returned 0 (0×0)   execution time : 3.550 s
+Press any key to continue.
